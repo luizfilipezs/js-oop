@@ -160,7 +160,7 @@ Por exemplo, vamos supor que alguns carros tenham a opção turbo, que faz com q
 
 ### Extends 
 
-Para criar carros com a opção turbo, podemos criar uma nova classe que irá estender a classe `Carro`.
+Para criar carros com a opção turbo, podemos criar uma nova classe que irá estender a classe `Carro`:
 ```
 class Turbo extends Carro {
 	turbo() {
@@ -189,4 +189,4 @@ Escrever um código orientado a objetos pode trazer mais praticidade ao desenvol
  - A redução do número de linhas de código é claramente perceptível, dado que podemos instanciar classes com apenas uma linha de código;
  - Ao invés de criar diversas funções e passar nossos objetos como parâmetros para elas, fazemos com que as ações modificadoras de conteúdo do objeto ocorram dentro dele mesmo. Deste modo, são os objetos que orquestram o código, sem necessitar de chamadas de funções externas.
 
->Vale lembrar que classes são um recurso novo da JS, o que quer dizer que muitos navegadores ainda não as suportam. Para contornar esta situação, você pode instalar pacotes do Node que adaptam o seu código para os navegadores. Um deles é o [Browserify](http://browserify.org/)
+>Vale lembrar que classes são um recurso novo da JS, o que quer dizer que muitos navegadores ainda não as suportam. Para contornar esta situação, você pode instalar pacotes do Node que adaptam o seu código para os navegadores. Um deles é o [Browserify](http://browserify.org/).
