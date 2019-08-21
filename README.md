@@ -45,7 +45,7 @@ var carro1 = {
 };
 ```
 
-Certo, agora estamos com um objeto um pouco diferente: ele possui propriedades métodos. O que difere um método de uma propriedade? É que seus valores são funções. Ou seja, métodos realizam ações, podendo modificar as propriedades do objeto ao qual fazem parte. No nosso exemplo, o método `acelerar` acessa as propriedades `velocidadeAtual` e `velocidadeMaxima`, verifica se a velocidade do carro pode ser aumentada e, se sim, altera o valor da `velocidadeAtual`, acrescentando o valor que passamos como argumento.
+Certo, agora estamos com um objeto um pouco diferente: ele possui propriedades e métodos. O que difere um método de uma propriedade? É que seus valores são funções. Ou seja, métodos realizam ações, podendo modificar as propriedades do objeto ao qual fazem parte. No nosso exemplo, o método `acelerar` acessa as propriedades `velocidadeAtual` e `velocidadeMaxima`, verifica se a velocidade do carro pode ser aumentada e, se sim, altera o valor da `velocidadeAtual`, acrescentando o valor que passamos como argumento.
 
 Na prática, poderíamos utilizar o código acima da seguinte forma para testar os comandos:
 ```
@@ -149,7 +149,7 @@ Podemos alterar os valores do objeto ou utilizar seus métodos, da seguinte form
 carro1.nome = 'Carro1';
 carro1.acelerar(100);
 ```
-Tudo bem, o código acima funciona, mas ainda não está prático o bastante. Que tal inserirmos preenchermos a propriedade `nome` logo quando criamos o objeto? Para isso, podemos inserir um construtor na nossa classe. O método `constructor` é rodado assim que criamos uma nova instância da nossa classe. Podemos acrescentar ele ao nosso código da seguinte maneira:
+Tudo bem, o código acima funciona, mas ainda não está prático o bastante. Que tal preenchermos a propriedade `nome` logo quando criamos o objeto? Para isso, podemos inserir um construtor na nossa classe. O método `constructor` é rodado assim que criamos uma nova instância da nossa classe. Podemos acrescentar ele ao nosso código da seguinte maneira:
 
 ```
 class Carro {
@@ -208,13 +208,13 @@ Estes carros continuarão tendo as mesmas propriedades e métodos que os outros,
 Para criar carros com a opção turbo, podemos criar uma nova classe que irá estender a classe Carro.
 ```
 class Turbo extends Carro {
-	super(nome, velocidadeMaxima);
+	super(nome, velocidadeMaxima) { };
 	turbo() {
 		this.velocidadeAtual = this.velocidadeMaxima;
 	}
 }
 ```
-O que faz o `super`? Ele é obrigatório, pois estende o `constructor` da classe original, no caso, Carro. Se o `constructor` possui parâmetros, passamos eles ao `super`, senão deixamos ele vazio, assim: `super();`.
+O que faz o `super`? Ele referencia a classe original, no caso, Carro. Se o `constructor` dela possui parâmetros, passamos eles ao `super`.
 
 Que tal criarmos nossos carros?
 
