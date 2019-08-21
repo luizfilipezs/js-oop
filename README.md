@@ -176,7 +176,7 @@ var carro1 = new Turbo('Carro com turbo', 320);
 carro1.turbo();
 carro1.freiar(20);
 ```
-A velocidade atual de `carro2` é 300.
+A velocidade atual de `carro1` é 300.
 
 >Tanto os carros criados diretamente com o comando `new Carro()` como os criados com `new Turbo()` são instâncias da classe `Carro`. Isto acontece porque  `Carro` é a classe pai de `Turbo`. Ou seja, independente de como as instâncias forem criadas, todos os objetos representarão carros.
 
