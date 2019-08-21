@@ -19,10 +19,7 @@ class Carro {
 }
 
 class Turbo extends Carro {
-	super(nome, velocidadeMaxima) {
-		this.nome = nome;
-		this.velocidadeMaxima = valocidadeMaxima;
-	};
+	super(nome, velocidadeMaxima) { };
 	turbo() {
 		this.velocidadeAtual = this.velocidadeMaxima;
 	}
