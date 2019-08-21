@@ -160,7 +160,7 @@ Por exemplo, vamos supor que alguns carros tenham a opção turbo, que faz com q
 
 ### Extends 
 
-Para criar carros com a opção turbo, podemos criar uma nova classe que irá estender a classe Carro.
+Para criar carros com a opção turbo, podemos criar uma nova classe que irá estender a classe `Carro`.
 ```
 class Turbo extends Carro {
 	turbo() {
