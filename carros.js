@@ -1,26 +1,25 @@
 class Carro {
-	nome;
-	velocidadeAtual = 0;
-	velocidadeMaxima;
-	constructor(nome, velocidadeMaxima) {
-		this.nome = nome;
-		this.velocidadeMaxima = velocidadeMaxima || 220;
-	}
-	acelerar(valor) {
-		if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
-			this.velocidadeAtual += valor;
-		}
-	}
-	freiar(valor) {
-		if (this.velocidadeAtual - valor >= 0) {
-			this.velocidadeAtual -= valor;
-		}
-	}
+  constructor(nome, velocidadeMaxima) {
+    this.nome = nome;
+    this.velocidadeMaxima = velocidadeMaxima || 220;
+    this.velocidadeAtual = 0;
+  }
+  acelerar(valor) {
+    if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
+      this.velocidadeAtual += valor;
+    }
+  }
+  freiar(valor) {
+    if (valor && this.velocidadeAtual >= valor) {
+      this.velocidadeAtual -= valor;
+    } else {
+      this.velocidadeAtual = 0;
+    }
+  }
 }
 
 class Turbo extends Carro {
-	super(nome, velocidadeMaxima) { };
-	turbo() {
-		this.velocidadeAtual = this.velocidadeMaxima;
-	}
+  turbo() {
+    this.velocidadeAtual = this.velocidadeMaxima;
+  }
 }
