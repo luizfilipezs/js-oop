@@ -9,7 +9,7 @@ class Carro {
       this.velocidadeAtual += valor;
     }
   }
-  freiar(valor) {
+  frear(valor) {
     if (valor && this.velocidadeAtual >= valor) {
       this.velocidadeAtual -= valor;
     } else {
