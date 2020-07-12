@@ -48,7 +48,7 @@ var carro1 = {
 };
 ```
 
-Certo, agora estamos com um objeto um pouco diferente: ele possui propriedades e métodos. O que difere um método de uma propriedade é que seus valores são funções. Ou seja, métodos realizam ações, podendo modificar as propriedades do objeto ao qual fazem parte. No nosso exemplo, o método `acelerar` acessa as propriedades `velocidadeAtual` e `velocidadeMaxima`, verifica se a velocidade do carro pode ser aumentada e, se sim, altera o valor da `velocidadeAtual`, acrescentando o valor que passamos como argumento.
+Certo, agora estamos com um objeto um pouco diferente: ele possui propriedades e métodos. O que difere um método de uma propriedade é que seu valor é uma função. Ou seja, métodos realizam ações, podendo modificar as propriedades do objeto ao qual fazem parte. No nosso exemplo, o método `acelerar` acessa as propriedades `velocidadeAtual` e `velocidadeMaxima`, verifica se a velocidade do carro pode ser aumentada e, se sim, altera o valor da `velocidadeAtual`, acrescentando o valor que passamos como argumento.
 
 Na prática, poderíamos utilizar o código acima da seguinte forma para testar os comandos:
 ```js
@@ -128,7 +128,7 @@ Agora, se quisermos criar um novo carro, basta invocar a nossa classe utilizando
 ```js
 var carro1 = new Carro('Carro 1');
 ```
-Podemos alterar os valores do objeto ou utilizar seus métodos, da seguinte forma:
+Podemos alterar os valores do objeto ou utilizar seus métodos da seguinte maneira:
 ```js
 carro1.nome = 'Impala';
 carro1.acelerar(100);
