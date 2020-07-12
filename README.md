@@ -15,10 +15,10 @@ O objeto na JS é representado por chaves (`{}`). Seguindo o exemplo anterior, v
 
 ```js
 var dicionario = {
-	programar: 'Significado de programar',
-	café: 'Significado de café',
-	inspiração: 'Significado de inspiração',
-	codificar: 'Signifcado de codificar'
+  programar: 'Significado de programar',
+  café: 'Significado de café',
+  inspiração: 'Significado de inspiração',
+  codificar: 'Signifcado de codificar'
 };
 ```
 Certo, temos nosso dicionário. Mas como procuramos o significado de "inspiração" dentro dele?
@@ -30,21 +30,21 @@ Se imprimirmos o valor da variável `significado` na tela ou no console, o valor
 Agora vamos para um outro exemplo. Vamos supor que deseje desenvolver um jogo de corrida. Para isto, cada carro possuirá as informações nome, velocidade atual e velocidade máxima e algumas ações, como acelerar ou frear. Como podemos fazer isso?
 ```js
 var carro1 = {
-	nome: 'Carro 1',
-	velocidadeAtual: 0,
-	velocidadeMaxima: 220,
-	acelerar: function(valor) {
-		if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
-			this.velocidadeAtual += valor;
-		}
-	},
-	frear: function(valor) {
-		if (valor && this.velocidadeAtual - valor >= 0) {
-			this.velocidadeAtual -= valor;
-		} else {
-			this.velocidadeAtual = 0;
-		}
-	}
+  nome: 'Carro 1',
+  velocidadeAtual: 0,
+  velocidadeMaxima: 220,
+  acelerar: function(valor) {
+    if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
+      this.velocidadeAtual += valor;
+    }
+  },
+  frear: function(valor) {
+    if (valor && this.velocidadeAtual - valor >= 0) {
+      this.velocidadeAtual -= valor;
+    } else {
+      this.velocidadeAtual = 0;
+    }
+  }
 };
 ```
 
@@ -59,11 +59,9 @@ carro1.frear(10); // Altera a velocidade para 35
 
 Agora, preste atenção a um detalhe:
 ```js
-acelerar: function(valor) {
-	if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
-		this.velocidadeAtual += valor;
-	}
-},
+if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
+  this.velocidadeAtual += valor;
+}
 ```
 Por que utilizamos a palavra-chave `this` antes do nome da propriedade que desejamos ler ou alterar? Porque propriedades e métodos são dependentes do objeto ao qual fazem parte. Portanto, se escrevêssemos apenas `velocidadeAtual`, o nosso interpretador buscaria por uma variável com este nome ao invés da propriedade dentro do objeto. Isso quer dizer que sempre devemos utilizar a seguinte sintaxe para ler propriedades de dentro do objeto:
 
@@ -95,23 +93,25 @@ As classes permitem que criemos um modelo de objeto que representará uma entida
 
 ```js
 class Carro {
-	constructor(nome) {
-		this.nome = nome;
-		this.velocidadeMaxima = 220;
-		this.velocidadeAtual = 0;
-	}
-	acelerar(valor) {
-		if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
-			this.velocidadeAtual += valor;
-		}
-	}
-	frear(valor) {
-		if (valor && this.velocidadeAtual - valor >= 0) {
-			this.velocidadeAtual -= valor;
-		} else {
-			this.velocidadeAtual = 0;
-		}
-	}
+  constructor(nome) {
+    this.nome = nome;
+    this.velocidadeMaxima = 220;
+    this.velocidadeAtual = 0;
+  }
+
+  acelerar(valor) {
+    if (this.velocidadeAtual + valor <= this.velocidadeMaxima) {
+      this.velocidadeAtual += valor;
+    }
+  }
+
+  frear(valor) {
+    if (valor && this.velocidadeAtual - valor >= 0) {
+      this.velocidadeAtual -= valor;
+    } else {
+      this.velocidadeAtual = 0;
+    }
+  }
 }
 ```
 
@@ -119,10 +119,10 @@ Vamos analisar o código acima. Ao invés de criar as propriedades diretamente, 
 
 Também é possível definir parâmetros no `constructor`:
 ```js
-	...
-	constructor(nome) {
-		this.nome = nome;
-	...
+  ...
+  constructor(nome) {
+    this.nome = nome;
+  ...
 ```
 Agora, se quisermos criar um novo carro, basta invocar a nossa classe utilizando a palavra-chave `new`:
 ```js
@@ -143,16 +143,16 @@ Lembra daquele código grande que escrevemos no princípio para criar um carro? 
 
 Podemos modificar outras propriedades no nosso `constructor`. Todo jogo de corrida legal possui carros com velocidades diferentes. Vamos deixar o nosso assim também?
 
-Podemos deixar um valor de velocidade máxima padrão para o caso de nenhum outro ser informado, bem como podemos inserir um valor personalizado. Veja:
+Podemos deixar que a velocidade máxima seja personalizada e garantir um valor padrão, para quando nenhum outro for passado. Veja:
 ```js
-	...
-	constructor(nome, velocidadeMaxima) {
-		this.nome = nome;
-		this.velocidadeMaxima = velocidadeMaxima || 220;
-	...
+  ...
+  constructor(nome, velocidadeMaxima) {
+    this.nome = nome;
+    this.velocidadeMaxima = velocidadeMaxima || 220;
+    ...
 ```
 
-Nossos carros já podem ser criados dessa forma:
+Nossos carros já podem ser criados desta forma:
 ```js
 var carro1 = new Carro('Carro lento', 60);
 var carro2 = new Carro('Carro com velocidade padrão');
@@ -178,9 +178,9 @@ Por exemplo, vamos supor que alguns carros tenham a opção turbo, que faz com q
 Para criar carros com a opção turbo, podemos criar uma nova classe que irá estender a classe `Carro`:
 ```js
 class Turbo extends Carro {
-	turbo() {
-		this.velocidadeAtual = this.velocidadeMaxima;
-	}
+  turbo() {
+    this.velocidadeAtual = this.velocidadeMaxima;
+  }
 }
 ```
 
@@ -204,4 +204,4 @@ Escrever um código orientado a objetos pode trazer mais praticidade ao desenvol
  - A **redução do número de linhas de código** é claramente perceptível, uma vez que podemos instanciar classes com apenas uma linha de código.
  - Ao invés de criar diversas funções e passar nossos objetos como parâmetros para elas, fazemos com que as ações modificadoras de conteúdo do objeto ocorram dentro dele mesmo. Deste modo, **são os objetos que orquestram o código**, sem necessitar de chamadas de funções externas.
 
->Vale lembrar que classes são um recurso novo da JS, o que quer dizer que muitos navegadores ainda não as suportam. Para contornar esta situação, você pode instalar pacotes do Node que adaptam o seu código para os navegadores. Um deles é o [Browserify](http://browserify.org/).
+>Vale lembrar que classes, na sintaxe que vimos aqui, são um recurso novo da JS, o que quer dizer que muitos navegadores ainda não as suportam. Para contornar esta situação, você pode instalar pacotes do Node que adaptam o seu código para os navegadores. Um deles é o [Browserify](http://browserify.org/).
