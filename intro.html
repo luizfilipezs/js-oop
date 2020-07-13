@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Introdução à JavaScript</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h1 id="introdução-à-javascript"><a class="header-link" href="#introdução-à-javascript"></a>Introdução à JavaScript</h1>
+<p>Neste pequeno tutorial, a proposta é permitir que você conheça os princípios básicos da sintaxe da linguagem JavaScript.</p>
+<p>Lógica de programação é algo que você aprende apenas uma vez e aperfeiçoa e continua a desenvolver pelo resto da vida. Todas as linguagens possuem suas próprias sintaxes, que vão se distinguir ou se assemelhar muito de acordo com o objetivo de cada uma.</p>
+<p>Felizmente, se você possui boas noções de lógica de programação, irá conseguir se adaptar às diferentes sintaxes e desafios que encontrar em linguagens com as quais você nunca trabalhou antes.</p>
+<p>Portanto, os requisitos para seguir este tutorial são:</p>
+<ul class="list">
+<li>Algum nível de conhecimento de lógica de prgramação</li>
+<li>Um editor de código (o mais indicado é o <a href="https://code.visualstudio.com/download">VSCode</a>)</li>
+</ul>
+<h2 id="notas-antes-de-começarmos"><a class="header-link" href="#notas-antes-de-começarmos"></a>Notas antes de começarmos</h2>
+<p>Ao longo dos exemplos que utilizaremos aqui, alguns comentários serão utilizados no código. Comentários são trechos que não são interpretados. Portanto, podemos utilizá-los para escrever qualquer coisa.</p>
+<p>Na JavaScript há dois tipos de comentários:</p>
+<ul class="list">
+<li><strong>Uma linha:</strong> Estes comentários só abrangem a linha em que foram escritos. Exemplo:<pre class="hljs"><code><span class="hljs-comment">// Este é um comentário de uma linha</span></code></pre></li>
+<li><strong>Múltiplas linhas:</strong> Estes comentários podem abranger quantas linhas forem necessárias.<pre class="hljs"><code><span class="hljs-comment">/*
+  Este comentário pode abranger quantas linhas
+  eu desejar
+*/</span></code></pre></li>
+</ul>
+<p>Por fim, para testar as funcionalidades que aprenderá aqui, você pode utilizar o comando <code>console.log()</code>. Ele permite que você imprima seu código no console do navegador (para ver o console no Google Chrome ou no Firefox, basta pressionar a tecla <code>F12</code>).</p>
+<p>Exemplo:</p>
+<pre class="hljs"><code><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Teste"</span>);</code></pre><h2 id="você-já-viu-isto-antes"><a class="header-link" href="#você-já-viu-isto-antes"></a>Você já viu isto antes</h2>
+<p>Na escola, e talvez na faculdade também, você estudou matemática. Não se prenda ao mito de que para ser um bom programador é importante ser bom com contas também, mas alguns processos envolvidos em escrever um algoritmo se assemelham muito aos que utilizamos para resolver problemas matemáticos.</p>
+<h3 id="variáveis"><a class="header-link" href="#variáveis"></a>Variáveis</h3>
+<p>Quando desejamos armazenar um determinado valor em algum lugar, utilizamos variáveis. Veja o exemplo abaixo:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">var</span> y = <span class="hljs-number">20</span>;
+
+x + y;</code></pre><p>O código acima parece muito o que víamos o professor escrever na lousa; mas é puro código JavaScript.</p>
+<p>Utilizar variáveis permite que você guarde valores para utilizar mais tarde, ou alterar. Por exemplo:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> z = x + y; <span class="hljs-comment">// x é igual a 30</span>
+
+z = z + z; <span class="hljs-comment">// z é igual a 60</span></code></pre><blockquote>
+<p>Note que uma vez declarada sua variável, você não precisa mais utilizar a palavra-chave <code>var</code> antes dela.</p>
+</blockquote>
+<p>O código acima poderia ser escrito de diferentes formas, como acontece na matemática. Por exemplo:</p>
+<pre class="hljs"><code>z = z * <span class="hljs-number">2</span>; <span class="hljs-comment">// multiplica o valor de z por 2</span>
+z += z; <span class="hljs-comment">// acrescenta ao valor de z o valor dele próprio</span></code></pre><p>Em todos estes casos, obteríamos o mesmo resultado. Mas convenhamos que o último modo foi o mais simples, não foi? Por isso, sempre busque utilizar a forma mais enxuta e legível de realizar uma operação.</p>
+<h2 id="tipos"><a class="header-link" href="#tipos"></a>Tipos</h2>
+<p>A JavaScript possui diversos tipos primitivos, que são aqueles mais básicos e que dão origem a outros tipos. Conheça agora os principais.</p>
+<h3 id="`number`"><a class="header-link" href="#`number`"></a><code>Number</code></h3>
+<p>Já vimos algo sobre os números enquanto entendíamos variáveis. As operações que podemos realizar com eles são basicamente aquelas que vemos no mundo real.</p>
+<h4 id="adição"><a class="header-link" href="#adição"></a>Adição</h4>
+<pre class="hljs"><code><span class="hljs-number">1</span> + <span class="hljs-number">2</span></code></pre><h4 id="subtração"><a class="header-link" href="#subtração"></a>Subtração</h4>
+<pre class="hljs"><code><span class="hljs-number">1</span> - <span class="hljs-number">2</span></code></pre><h4 id="multiplicação"><a class="header-link" href="#multiplicação"></a>Multiplicação</h4>
+<pre class="hljs"><code><span class="hljs-number">1</span> * <span class="hljs-number">2</span></code></pre><h4 id="divisão"><a class="header-link" href="#divisão"></a>Divisão</h4>
+<pre class="hljs"><code><span class="hljs-number">1</span> / <span class="hljs-number">2</span></code></pre><h4 id="resto"><a class="header-link" href="#resto"></a>Resto</h4>
+<p>Retorna o resto de uma divisão. Por exemplo:</p>
+<pre class="hljs"><code><span class="hljs-number">10</span> % <span class="hljs-number">3</span></code></pre><p>Neste caso, o valor retornado é <code>1</code>.</p>
+<h3 id="`string`"><a class="header-link" href="#`string`"></a><code>String</code></h3>
+<p>Representa um valor em texto.</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> nome = <span class="hljs-string">"John"</span>;</code></pre><p>Também podemos unir dois textos:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> boasVindas = <span class="hljs-string">"Bem-vindo, "</span>;
+<span class="hljs-keyword">var</span> nomeCompleto = <span class="hljs-string">"John Depp"</span>;
+<span class="hljs-keyword">var</span> mensagem = boasVindas + nomeCompleto;</code></pre><p>Isto irá imprimir <code>&quot;Bem-vindo, John Depp&quot;</code>.</p>
+<p>Há muitas operações que podem ser realizadas com strings. Podemos, por exemplo, deixar o texto todo mínusculo ou maiúsculo:</p>
+<pre class="hljs"><code>mensagem.toLowerCase(); <span class="hljs-comment">// "bem-vindo, john depp"</span>
+mensagem.toUpperCase(); <span class="hljs-comment">// "BEM-VINDO, JOHN DEPP"</span></code></pre><p>Ou obter o comprimento da <code>string</code>:</p>
+<pre class="hljs"><code>mensagem.length; <span class="hljs-comment">// 20</span></code></pre><p>Não há problemas em unir strings a números também. Veja:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> idade = <span class="hljs-number">19</span>;
+<span class="hljs-keyword">var</span> nome = <span class="hljs-string">"Louis"</span>;
+
+<span class="hljs-built_in">console</span>.log(nome + <span class="hljs-string">" tem "</span> + idade + <span class="hljs-string">" anos"</span>); <span class="hljs-comment">// "Louis tem 19 anos"</span></code></pre><h3 id="`array`"><a class="header-link" href="#`array`"></a><code>Array</code></h3>
+<p>Representa uma lista. Exemplo:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> listaCompras = [<span class="hljs-string">"feijao"</span>, <span class="hljs-string">"arroz"</span>, <span class="hljs-string">"alface"</span>];</code></pre><p>Para descobrir quantos ítens há em um <code>array</code>, você pode ler a propriedade <code>length</code> (comprimento) dele.</p>
+<pre class="hljs"><code>listaCompras.length; <span class="hljs-comment">// 3</span></code></pre><p>Acessar os ítens de um <code>array</code> também é simples. Basta informar o índice dele na lista.</p>
+<pre class="hljs"><code>listaCompras[<span class="hljs-number">0</span>]; <span class="hljs-comment">// "feijao"</span>
+listaCompras[<span class="hljs-number">2</span>]; <span class="hljs-comment">// "alface"</span></code></pre><blockquote>
+<p>Perceba que os índices de um <code>array</code> começam pelo número <code>0</code>. Portanto, o primeiro índice do nosso exemplo é <code>0</code> e o último é <code>2</code>.</p>
+</blockquote>
+<p>Também podemos sobescrever o valor de um índice:</p>
+<pre class="hljs"><code>listaCompras[<span class="hljs-number">2</span>] = <span class="hljs-string">"banana"</span>;
+listaCompras[<span class="hljs-number">2</span>]; <span class="hljs-comment">// "banana"</span></code></pre><p>Vale lembrar que um <code>array</code> pode conter quaisquer valores dentro de si, o que inclui até mesmo outros arrays e variáveis. Por exemplo:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> lista = [
+  <span class="hljs-number">1</span>,
+  <span class="hljs-number">2</span>,
+  <span class="hljs-string">"Janela"</span>,
+  [
+    <span class="hljs-string">"feijao"</span>,
+    <span class="hljs-string">"arroz"</span>,
+    <span class="hljs-string">"alface"</span>
+  ],
+  nomeCompleto
+]</code></pre><h2 id="exemplo-prático"><a class="header-link" href="#exemplo-prático"></a>Exemplo prático</h2>
+<p>OK, já temos bastante conhecimento novo para assimilar. Então, vamos começar desenvolvendo um algoritmo simples, utilizando mais um recurso da JavaScript: funções.</p>
+<p>As funções executam um determinado código quantas vezes nós precisarmos. Para o nosso exemplo, vamos criar uma que dá as boas-vindas ao usuário:</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boasVindas</span>(<span class="hljs-params">nome</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Boas-vindas a você, "</span> + nome);
+}</code></pre><p>Se você executar o código acima nada irá acontecer. Mas por quê? Porque uma função não é executada até que seja chamada. Então vamos lá:</p>
+<pre class="hljs"><code>boasVindas(<span class="hljs-string">"Sílvia"</span>);
+boasVindas(<span class="hljs-string">"Carlos"</span>);
+boasVindas(<span class="hljs-string">"João"</span>);</code></pre><p>Após executar o código acima, você deverá ver o seguinte no console do seu navegador:</p>
+<pre class="hljs"><code><span class="hljs-string">"Boas-vindas a você, Sílvia"</span>
+<span class="hljs-string">"Boas-vindas a você, Carlos"</span>
+<span class="hljs-string">"Boas-vindas a você, João"</span></code></pre><p>Certo. Agora podemos deixar nosso código mais completo. Que tal criar uma lista de pessoas que já foram agraciadas com as nossas boas-vindas? Vamos reescrever nosso código:</p>
+<pre class="hljs"><code><span class="hljs-comment">// Lista de nomes já chamados</span>
+<span class="hljs-keyword">var</span> pessoas = [];
+
+<span class="hljs-comment">// Função que dá boas-vindas</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boasVindas</span>(<span class="hljs-params">nome</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Boas-vindas a você, "</span> + nome);
+
+  <span class="hljs-comment">// Adicionar nome à lista</span>
+  pessoas.push(nome);
+}
+
+<span class="hljs-comment">// Dar boas-vindas</span>
+boasVindas(<span class="hljs-string">"Sílvia"</span>);
+boasVindas(<span class="hljs-string">"Carlos"</span>);
+boasVindas(<span class="hljs-string">"João"</span>);
+
+<span class="hljs-comment">// Mostrar nomes já chamados</span>
+<span class="hljs-built_in">console</span>.log(pessoas);</code></pre><p>Legal! Utilizando o método <code>push()</code> do <code>array</code>, conseguimos adicionar ítens à nossa lista de pessoas.</p>
+<h3 id="condicionais"><a class="header-link" href="#condicionais"></a>Condicionais</h3>
+<p>Já estamos sendo bem educados com os nossos usuários. Mas não queremos cometer o erro de dar boas-vindas a eles mais de uma vez. Como podemos evitar este engano?</p>
+<p>Uma boa maneira de fazer isso é por adicionar uma condicional que avalia se o nome já existe na lista. Veja como a nosssa funcão <code>boasVindas</code> ficaria:</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boasVindas</span>(<span class="hljs-params">nome</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Boas-vindas a você, "</span> + nome);
+
+  <span class="hljs-keyword">if</span> (!pessoas.includes(nome)) {
+    <span class="hljs-comment">// Adicionar nome à lista</span>
+    pessoas.push(nome);
+  }
+}</code></pre><p>O método <code>includes</code> do <code>array</code> verifica se o valor passado dentro dele existe na lista. Se sim, retorna <code>true</code> (verdadeiro), se não retorna <code>false</code> (falso).</p>
+<p>Quando o retorno de um método ou de uma variável é <code>true</code> ou <code>false</code>, dizemos que seu tipo é <code>boolean</code>. Os booleanos servem justamente para sabermos se algo é verdade ou não.</p>
+<p>O que a condicional <code>if</code> faz é avaliar se um <code>boolean</code> é verdadeiro e, se for, irá executar o código dentro das chaves (<code>{}</code>).</p>
+<p>No nosso exemplo, queremos saber se a lista de pessoas inclui o nome que determinamos. Então, imagine que o nome <code>&quot;Carlos&quot;</code> já foi chamado uma vez. Na segunda, ao perguntarmos se a lista de pessoas inclui aquele nome, <code>true</code> seria retornado, indicando que sim. Mas isso faria com que o código dentro das chaves fosse rodado e o nome incluído novamente. Não é isso que nós queremos, certo?</p>
+<p>Por isso, utilizamos o operador de <code>!</code> antes da nossa condição. Ele inverte o valor do <code>boolean</code>. Ou seja, ao utilizarmos a condição <code>!pessoas.includes(nome)</code> estamos como que dizendo: &quot;Se a lista NÃO possuir este nome dentro dela, rode o código dentro das chaves&quot;.</p>
+<p>Deste modo, um nome só será adicionado à lista se ele realmente ainda não estiver lá. Para verificar isto, basta fazer o teste novamente:</p>
+<pre class="hljs"><code>boasVindas(<span class="hljs-string">"Sílvia"</span>);
+boasVindas(<span class="hljs-string">"Carlos"</span>);
+boasVindas(<span class="hljs-string">"Carlos"</span>);
+boasVindas(<span class="hljs-string">"João"</span>);</code></pre><p>Agora, a lista de pessoas não terá nomes repetidos. No nosso exemplo, ela ficou da seguinte forma:</p>
+<p><code>[&quot;Sílvia&quot;, &quot;Carlos&quot;, &quot;João&quot;]</code></p>
+<h4 id="if/else"><a class="header-link" href="#if/else"></a>if/else</h4>
+<p>Talvez você queira ser notificado quando repetir um nome sem querer. Poderíamos mostrar esse aviso da seguinte maneira:</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (!pessoas.includes(nome)) {
+   <span class="hljs-comment">// Adicionar nome à lista</span>
+  pessoas.push(nome);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// Avisar que pessoa já está na lista</span>
+  <span class="hljs-built_in">console</span>.warn(nome + <span class="hljs-string">" já foi adicionado à lista de pessoas!"</span>);
+}</code></pre><p>O código dentro das chaves de <code>else</code> é rodado quando a condição de <code>if</code> é falsa.</p>
+<p>Para guardar bem isso na mente, veja um exemplo mais simples:</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (<span class="hljs-number">1</span> &lt; <span class="hljs-number">2</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Um é menor que dois"</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Um é maior que dois"</span>);
+}</code></pre><p>No exemplo acima, o código dentro de <code>if</code> seria rodado, pois <code>1</code> é realmente menor que <code>2</code>. Para fins de teste, troque o operador <code>&lt;</code> (menor que) pelo operador <code>&gt;</code> (maior que) e veja o que acontece.</p>
+<p>Você ainda pode passar mais de uma condição com as palavras-chave <code>else if</code>, utilizando o último <code>else</code> como código a ser executado caso nenhuma seja verdadeira:</p>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (<span class="hljs-number">1</span> &lt; <span class="hljs-number">2</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Um é menor que dois"</span>);
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-number">1</span> === <span class="hljs-number">2</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Um é igual a dois"</span>);
+}
+<span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Um é maior que dois"</span>);
+}</code></pre><blockquote>
+<p>O operador <code>===</code> verifica se um elemento é igual a outro de todas as formas. Ou seja, ele checa tanto o <strong>valor</strong> como o <strong>tipo</strong> de um e de outro. Por exemplo, <code>1 == &quot;1&quot;</code> retorna <code>true</code>, pois o valor dos dois elementos é o mesmo, apesar de serem de tipos diferentes. Por outro lado, <code>1 === &quot;1&quot;</code> retorna <code>false</code>, pois um é do tipo <code>Number</code> e o outro é do tipo <code>String</code>, ou seja, os dois elementos não são totalmente iguais.</p>
+</blockquote>
+    </article>
+  </body>
+</html>
