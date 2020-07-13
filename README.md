@@ -1,5 +1,5 @@
-# JavaScript orientada à objetos
+# JavaScript orientada a objetos
 
 Conteúdo (em desenvolvimento):
-- [Introdução à JavaScript](https://luizfilipezs.github.io/oop-js/intro.html)
-- [Programação orientada a objetos na JavaScript](https:/luizfilipezs.github.io/oop-js)
+- [Introdução à JavaScript](https://github.com/luizfilipezs/oop-js/blob/master/introducao-a-javascript.md)
+- [Programação orientada a objetos na JavaScript](https://github.com/luizfilipezs/oop-js/blob/master/poo-na-javascript.md)
